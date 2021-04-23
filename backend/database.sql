@@ -13,15 +13,15 @@ CREATE TABLE post (
     id integer PRIMARY KEY AUTO_INCREMENT,
     title varchar(255) NOT NULL,
     body TEXT,
-    publishdate date DEFAULT CURRENT_TIMESTAMP,
-    editdate date DEFAULT CURRENT_TIMESTAMP
+    publishdate datetime DEFAULT CURRENT_TIMESTAMP,
+    editdate datetime DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE comment (
     id integer PRIMARY KEY auto_increment,
     postId integer NOT NULL,
     body TEXT,
-    publishdate date DEFAULT CURRENT_TIMESTAMP,
+    publishdate datetime DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(postId) REFERENCES post(id)
 );
 
