@@ -187,6 +187,21 @@ app.get("/comments/:id", (req, res) => {
   });
 });
 
+app.get("/posts/:id/comments", (req, res) => {
+  pool.getConnection((err, conn) => {
+    if (err) throw err;
+
+    conn.query("SELECT * FROM comment WHERE postId = ?", [req.params.id], (err, rows) => {
+      conn.release(); // return the connection to pool
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(rows);
+      }
+    });
+  });
+});
+
 app.delete("/comments/:id", (req, res) => {
   pool.getConnection((err, conn) => {
     if (err) throw err;
