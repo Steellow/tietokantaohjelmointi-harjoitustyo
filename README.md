@@ -15,3 +15,4 @@ TODO:
 - Ability to add comments
 - Admin interface?
 - Better sample posts
+- Don't show full blog body on post previews
