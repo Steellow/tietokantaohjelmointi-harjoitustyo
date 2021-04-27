@@ -1,14 +1,23 @@
 import Header from "./components/Header";
-import PostPreview from "./components/PostPreview";
+import PostMapper from "./components/PostMapper";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import BlogPost from "./pages/BlogPost";
 
 const App = () => {
   return (
-    <div className="App mx-auto p-6 max-w-4xl">
-      <Header />
-      <PostPreview />
-      <PostPreview />
-      <PostPreview />
-    </div>
+    <Router>
+      <div className="max-w-4xl p-6 mx-auto App">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <PostMapper />
+          </Route>
+          <Route path="/post">
+            <BlogPost />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 

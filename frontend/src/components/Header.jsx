@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
-    <header className="border-b border-gray-300 pb-6">
-      <a href="$" className="font-bold hover:text-red-600 active:text-red-700 text-2xl">
+    <header className="pb-6 border-b border-gray-300">
+      <Link to="/" className="text-2xl font-bold hover:text-red-600 active:text-red-700">
         Super awesome blog
-      </a>
+      </Link>
       {/* TODO: Search bar */}
     </header>
   );
