@@ -1,18 +1,24 @@
-const PostPreview = () => {
+import useAxios from "axios-hooks";
+import { Link } from "react-router-dom";
+
+const PostPreview = ({ id }) => {
+  const [{ data, loading, error }] = useAxios(`http://localhost:5000/posts/${id}`);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error! Check the console.</p>;
+
   return (
-    <article className="py-7 border-b-2 border-gray-100">
-      <h3 className="font-bold text-xl inline-block mr-4">
-        <a href="#" className="link hover:text-red-600 active:text-red-700 underline">
-          Blog Title
-        </a>
+    <article className="border-b-2 border-gray-100 py-7">
+      <h3 className="inline-block mr-4 text-xl font-bold">
+        <Link to={`/post/${data.id}`} className="underline link hover:text-red-600 active:text-red-700">
+          {data.title}
+        </Link>
       </h3>
-      <time className="border-gray-300 border-l-2 pl-4 tracking-wider uppercase">Feb 17, 2021</time>
-      <p className="my-4">
-        Here's how to stop Plausible Analytics from counting your own visits made using mobile devices. Hint: use a bookmarklet.{" "}
-      </p>
-      <a href="#" className="link text-sm tracking-wider uppercase underline">
+      <time className="pl-4 tracking-wider uppercase border-l-2 border-gray-300">{new Date(data.publishdate).toLocaleDateString("fi-FI")}</time>
+      <p className="my-4">{data.body}</p>
+      <Link to={`/post/${data.id}`} className="text-sm tracking-wider underline uppercase link">
         Continue reading
-      </a>
+      </Link>
     </article>
   );
 };

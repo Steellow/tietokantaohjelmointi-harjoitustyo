@@ -12,7 +12,7 @@ const App = () => {
           <Route exact path="/">
             <PostMapper />
           </Route>
-          <Route path="/post">
+          <Route path="/post/:id">
             <BlogPost />
           </Route>
         </Switch>
