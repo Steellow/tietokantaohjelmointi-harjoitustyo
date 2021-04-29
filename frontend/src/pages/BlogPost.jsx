@@ -1,10 +1,11 @@
 import useAxios from "axios-hooks";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import CommentMapper from "../components/CommentMapper";
 
 const BlogPost = () => {
-  let { id } = useParams();
-  const [{ data, loading, error }] = useAxios(`http://localhost:5000/posts/${id}`);
+  const { id } = useParams();
+  const [{ data, loading, error }] = useAxios(`http://localhost:5000/posts/${id}`, { useCache: false });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error! Check the console.</p>;
@@ -14,11 +15,13 @@ const BlogPost = () => {
       <div className="flex justify-between">
         <h1 className="mb-2 text-3xl font-bold">{data.title}</h1>
         <div>
-          <button type="submit" className="mr-4 btn-red-outline">
-            Delete
-          </button>
+          <Link to={`/edit/${id}`}>
+            <button type="submit" className="mr-4 btn-red-outline">
+              Edit
+            </button>
+          </Link>
           <button type="submit" className="px-4 btn-red-outline">
-            Edit
+            Delete
           </button>
         </div>
       </div>

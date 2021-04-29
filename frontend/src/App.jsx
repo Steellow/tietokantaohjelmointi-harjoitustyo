@@ -16,7 +16,7 @@ const App = () => {
           <Route path="/post/:id">
             <BlogPost />
           </Route>
-          <Route path="/new">
+          <Route path="/edit/:id?">
             <NewPost />
           </Route>
         </Switch>

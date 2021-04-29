@@ -6,7 +6,7 @@ const Header = () => {
       <Link to="/" className="text-2xl font-bold hover:text-red-600 active:text-red-700">
         Super awesome blog
       </Link>
-      <Link to="/new">
+      <Link to="/edit">
         <button className="btn-red">New post</button>
       </Link>
     </header>

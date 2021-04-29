@@ -16,3 +16,4 @@ TODO:
 - Admin interface?
 - Better sample posts
 - Don't show full blog body on post previews
+- Show line changes
