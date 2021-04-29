@@ -2,7 +2,7 @@ import PostPreview from "./PostPreview";
 import useAxios from "axios-hooks";
 
 const PostMapper = () => {
-  const [{ data, loading, error }] = useAxios("http://localhost:5000/posts");
+  const [{ data, loading, error }] = useAxios("http://localhost:5000/posts", { useCache: false });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error! Check the console.</p>;

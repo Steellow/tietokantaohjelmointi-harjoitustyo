@@ -1,14 +1,31 @@
+import axios from "axios";
 import useAxios from "axios-hooks";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import CommentMapper from "../components/CommentMapper";
 
 const BlogPost = () => {
   const { id } = useParams();
   const [{ data, loading, error }] = useAxios(`http://localhost:5000/posts/${id}`, { useCache: false });
+  const history = useHistory();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error! Check the console.</p>;
+
+  const handleDelete = () => {
+    if (window.confirm("Are you sure?")) {
+      axios({
+        method: "delete",
+        url: `http://localhost:5000/posts/${id}`,
+      })
+        .then((res) => {
+          history.push(`/`);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
 
   return (
     <article className="py-7">
@@ -20,7 +37,7 @@ const BlogPost = () => {
               Edit
             </button>
           </Link>
-          <button type="submit" className="px-4 btn-red-outline">
+          <button onClick={handleDelete} type="submit" className="px-4 btn-red-outline">
             Delete
           </button>
         </div>

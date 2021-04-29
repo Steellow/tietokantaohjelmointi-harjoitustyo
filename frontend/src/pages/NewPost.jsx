@@ -26,7 +26,6 @@ const NewPost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(body);
     if (id) {
       axios({
         method: "put",
