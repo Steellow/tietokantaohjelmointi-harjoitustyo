@@ -98,7 +98,7 @@ app.post("/posts", (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.send(`New post has been added.`);
+        res.send(`New post has been added with the id ${rows.insertId}.`);
       }
     });
   });

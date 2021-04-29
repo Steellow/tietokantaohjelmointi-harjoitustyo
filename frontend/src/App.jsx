@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import PostMapper from "./components/PostMapper";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BlogPost from "./pages/BlogPost";
+import NewPost from "./pages/NewPost";
 
 const App = () => {
   return (
@@ -14,6 +15,9 @@ const App = () => {
           </Route>
           <Route path="/post/:id">
             <BlogPost />
+          </Route>
+          <Route path="/new">
+            <NewPost />
           </Route>
         </Switch>
       </div>
