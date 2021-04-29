@@ -1,4 +1,3 @@
-import CommentForm from "../components/CommentForm";
 import useAxios from "axios-hooks";
 import { useParams } from "react-router";
 import CommentMapper from "../components/CommentMapper";
@@ -21,7 +20,6 @@ const BlogPost = () => {
       <p className="my-6">{data.body}</p>
       <h3 className="pt-4 mb-2 text-3xl font-bold border-t border-gray-300">Comments</h3>
       <CommentMapper id={id} />
-      <CommentForm />
     </article>
   );
 };

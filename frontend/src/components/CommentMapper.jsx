@@ -1,4 +1,5 @@
 import useAxios from "axios-hooks";
+import CommentForm from "../components/CommentForm";
 import Comment from "./Comment";
 
 const CommentMapper = ({ id }) => {
@@ -12,6 +13,7 @@ const CommentMapper = ({ id }) => {
       {data.map((comment) => (
         <Comment key={comment.id} data={comment} />
       ))}
+      <CommentForm id={id} />
     </div>
   );
 };
