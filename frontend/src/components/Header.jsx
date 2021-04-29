@@ -7,7 +7,7 @@ const Header = () => {
         Super awesome blog
       </Link>
       <Link to="/new">
-        <button className="px-3 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-700">New post</button>
+        <button className="btn-red">New post</button>
       </Link>
     </header>
   );

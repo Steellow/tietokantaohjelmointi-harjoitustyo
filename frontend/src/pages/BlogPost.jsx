@@ -14,16 +14,10 @@ const BlogPost = () => {
       <div className="flex justify-between">
         <h1 className="mb-2 text-3xl font-bold">{data.title}</h1>
         <div>
-          <button
-            type="submit"
-            className="px-4 py-1 mr-4 font-bold text-red-500 bg-transparent border border-red-500 rounded hover:bg-red-500 hover:text-white"
-          >
+          <button type="submit" className="mr-4 btn-red-outline">
             Delete
           </button>
-          <button
-            type="submit"
-            className="px-4 py-1 font-bold text-red-500 bg-transparent border border-red-500 rounded hover:bg-red-500 hover:text-white"
-          >
+          <button type="submit" className="px-4 btn-red-outline">
             Edit
           </button>
         </div>
