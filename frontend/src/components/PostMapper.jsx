@@ -9,9 +9,12 @@ const PostMapper = () => {
 
   return (
     <>
-      {data.map((post) => (
-        <PostPreview key={post.id} id={post.id} />
-      ))}
+      {data
+        .slice(0) // Using slice(0) here because just using reverse() didn't work for some reason
+        .reverse()
+        .map((post) => (
+          <PostPreview key={post.id} id={post.id} />
+        ))}
     </>
   );
 };
