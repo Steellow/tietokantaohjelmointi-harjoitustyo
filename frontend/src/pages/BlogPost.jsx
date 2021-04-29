@@ -10,8 +10,24 @@ const BlogPost = () => {
   if (error) return <p>Error! Check the console.</p>;
 
   return (
-    <article className=" py-7">
-      <h1 className="mb-2 text-3xl font-bold">{data.title}</h1>
+    <article className="py-7">
+      <div className="flex justify-between">
+        <h1 className="mb-2 text-3xl font-bold">{data.title}</h1>
+        <div>
+          <button
+            type="submit"
+            className="px-4 py-1 mr-4 font-bold text-red-500 bg-transparent border border-red-500 rounded hover:bg-red-500 hover:text-white"
+          >
+            Delete
+          </button>
+          <button
+            type="submit"
+            className="px-4 py-1 font-bold text-red-500 bg-transparent border border-red-500 rounded hover:bg-red-500 hover:text-white"
+          >
+            Edit
+          </button>
+        </div>
+      </div>
       <time className="tracking-wider text-gray-600 uppercase">
         {Date.parse(data.editdate) > Date.parse(data.publishdate)
           ? "Edited on " + new Date(data.editdate).toLocaleDateString("fi-FI")
