@@ -31,19 +31,19 @@ INSERT INTO post(title, body)
 values("My first blog post!", "This is my first blog post. I'm so excited!");
 
 INSERT INTO post(title, body)
-values("Test post?", "Is this even working?");
+values("Test post?", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
 
 INSERT INTO post(title, body)
-values("ʕ•́ᴥ•̀ʔっ", "👊 wins ✂, ✂ wins 📄, 📄 wins 👊");
+values("This project", "I used React, Express, MySQL and Tailwind CSS.");
 
 -- Create sample comments
 
 INSERT INTO comment(postId, body)
-values(1, "Maaaan that's so cool 🤩");
+values(1, "Maaaan that's so cool!");
 
 INSERT INTO comment(postId, body)
 values(1, "Lol are you serious?");
 
 INSERT INTO comment(postId, body)
-values(3, "Yeah but 🔫 beats them all!");
+values(2, "I find this very interesting.");
 
