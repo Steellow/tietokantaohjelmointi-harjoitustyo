@@ -47,7 +47,7 @@ const BlogPost = () => {
           ? "Edited on " + new Date(data.editdate).toLocaleDateString("fi-FI")
           : "Published on " + new Date(data.publishdate).toLocaleDateString("fi-FI")}
       </time>
-      <p className="my-6">{data.body}</p>
+      <p className="my-6 whitespace-pre-line">{data.body}</p>
       <h3 className="pt-4 mb-2 text-3xl font-bold border-t border-gray-300">Comments</h3>
       <CommentMapper id={id} />
     </article>
