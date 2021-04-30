@@ -15,7 +15,7 @@ const PostPreview = ({ id }) => {
         </Link>
       </h3>
       <time className="pl-4 tracking-wider uppercase border-l-2 border-gray-300">{new Date(data.publishdate).toLocaleDateString("fi-FI")}</time>
-      <p className="my-4">{data.body}</p>
+      <p className="my-4">{data.body.length > 256 ? `${data.body.substring(0, 256)}...` : data.body}</p>
       <Link to={`/post/${data.id}`} className="text-sm tracking-wider underline uppercase link">
         Continue reading
       </Link>

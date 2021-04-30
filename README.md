@@ -11,6 +11,4 @@ Assignment was to create a web app with at least one database table with CRUD fu
 
 TODO:
 
-- Better sample posts
-- Don't show full blog body on post previews
 - Show line changes
