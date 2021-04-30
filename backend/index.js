@@ -76,12 +76,18 @@ app.delete("/posts/:id", (req, res) => {
   pool.getConnection((err, conn) => {
     if (err) throw err;
 
-    conn.query("DELETE FROM post WHERE id = ?", [req.params.id], (err, rows) => {
-      conn.release(); // return the connection to pool
+    conn.query("DELETE FROM comment WHERE postId = ?", [req.params.id], (err, rows) => {
       if (err) {
         console.log(err);
       } else {
-        res.send(`Deleted post with ID ${[req.params.id]}`);
+        conn.query("DELETE FROM post WHERE id = ?", [req.params.id], (err, rows) => {
+          conn.release(); // return the connection to pool
+          if (err) {
+            console.log(err);
+          } else {
+            res.send(`Deleted post with ID ${[req.params.id]}`);
+          }
+        });
       }
     });
   });
